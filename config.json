@@ -2,5 +2,7 @@
 	"ip" : "127.0.0.1",
 	"port" : 8000,
 	"publicDir" : "./public/www/",
-	"errorDir" : "./public/error/"
+	"errorDir" : "./public/error/",
+	"indexFile" : "index.html",
+	"error404" : "404.html"
 }
