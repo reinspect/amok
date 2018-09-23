@@ -2,7 +2,7 @@
 
 [![Build](https://travis-ci.org/reinspect/amok.svg?branch=master)](https://travis-ci.org/reinspect/amok) [![License](https://img.shields.io/github/license/reinspect/amok.svg)](https://github.com/reinspect/amok/blob/master/LICENSE) ![Downloads](https://img.shields.io/github/downloads/reinspect/amok/total.svg) [![Donate](https://img.shields.io/badge/Donate-PayPal-009cde.svg)](https://paypal.me/reinspect)
 
-AMOK is a Clean, Organized, and Simple Web Server running by Python.
+AMOK is a Clean, Organized, and Simple Web Server powered by Python.
 ## Features
 - Flexible Configuration
 - Supports HTML
