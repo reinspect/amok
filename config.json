@@ -1,6 +1,7 @@
 {
 	"ip" : "127.0.0.1",
 	"port" : 8000,
+	"runInBackground" : 1,
 	"publicDir" : "./public/www/",
 	"errorDir" : "./public/error/",
 	"indexFile" : "index.html",

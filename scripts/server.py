@@ -1,5 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from variables import *
+from signs import *
 
 class httpServe(BaseHTTPRequestHandler):
 
@@ -14,12 +15,7 @@ class httpServe(BaseHTTPRequestHandler):
             self.send_response(404)
         self.end_headers()
         self.wfile.write(bytes(file_to_open, 'utf-8'))
-msg = """
-+----------------------------+
-| Press [CTRL] + [C] to stop |
-+----------------------------+
-"""
 httpd = HTTPServer((ip, port), httpServe)
 print("Running on " + ip + " and port", port)
-print(msg)
+print(stopMsg)
 httpd.serve_forever()
