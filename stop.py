@@ -1,5 +1,5 @@
 import os
-from scripts.signs import *
+from core.msg import *
 
-os.system('pkill -f ./scripts/server.py')
+os.system('pkill -f ./core/server.py')
 print(killMsg)

@@ -1,6 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from variables import *
-from signs import *
+from msg import *
 
 class httpServe(BaseHTTPRequestHandler):
 
@@ -16,6 +16,16 @@ class httpServe(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(bytes(file_to_open, 'utf-8'))
 httpd = HTTPServer((ip, port), httpServe)
-print("Running on " + ip + " and port", port)
+print("\nRunning on " + ip + ":" + str(port))
 print(stopMsg)
-httpd.serve_forever()
+try:
+    httpd.serve_forever()
+    if(close==True):
+        raise
+        #httpd.server_close()
+except KeyboardInterrupt:
+    httpd.server_close()
+    print("\n\nServer Stopped\nThanks for using AMOK!\n")
+except:
+    httpd.server_close()
+    print("\n\nServer Stopped\nThanks for using AMOK!\n") 

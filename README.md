@@ -11,7 +11,7 @@ AMOK is a Clean, Organized, and Simple Web Server powered by Python.
 ## To-do
 - Let's Encrypt Support
 - Preprocessor Support (Handlebars, Pug, SASS, etc.)
----
+
 ## Prerequisites
 - Python 3.x
 - a Terminal (Command Prompt should work fine, too.)
