@@ -50,13 +50,31 @@ killMsg = """
 
 parser = argparse.ArgumentParser(description="stops AMOK")
 parser.add_argument('-stop', action='store_true')
+parser.add_argument('-server', action='store_true')
 
 args = parser.parse_args()
 
 if args.stop:
-	os.system('pkill -f ./core/server.py')
+	os.system('pkill -f amok.py')
 	print(killMsg)
 	exit()
+if args.server:
+    class httpServe(BaseHTTPRequestHandler):
+        def do_GET(self):
+            if self.path == '/':
+                self.path = '/index.html'
+            try:
+                file_to_open = open(publicDir + self.path[1:]).read()
+                self.send_response(200)
+            except:
+                file_to_open = open(errorDir + '404.html').read()
+                self.send_response(404)
+            self.end_headers()
+            self.wfile.write(bytes(file_to_open, 'utf-8'))
+    httpd = HTTPServer((ip, port), httpServe)
+    print("\nRunning on " + ip + ":" + str(port))
+    print(stopMsg)
+    httpd.serve_forever()
 
 print(chr(27) + '[2J')
 
@@ -262,7 +280,7 @@ else:
 #
 
 if runInBg == 1:
-    os.system('nohup python3 ./core/amok.py &')
+    os.system('nohup python3 amok.py -server &')
     print(bgMsg)
 else:
     class httpServe(BaseHTTPRequestHandler):
