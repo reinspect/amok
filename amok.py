@@ -8,7 +8,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 
 ip = "127.0.0.1"
 port = 8000
-runInBg = 0
+runInBg = 1
 publicDir = "./public/www/"
 errorDir = "./public/error/"
 indexFile = "index.html"
@@ -37,9 +37,9 @@ stopMsg = """
 bgMsg = """
 +-----------------------------------+
 | AMOK is running in the Background |
-+-----------------------------------+
-| To Stop it, type: python3 stop.py |
-+-----------------------------------+
++-----------------------------------------+
+| To Stop it, type: python3 amok.py -stop |
++-----------------------------------------+
 """
 
 killMsg = """
